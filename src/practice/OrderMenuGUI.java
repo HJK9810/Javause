@@ -3,14 +3,36 @@ package practice;
 import javax.swing.*;
 import java.awt.*;
 
-public class OrderMenuGUI extends JPanel {
+public class OrderMenuGUI extends JFrame {
+    WelcomeP wP = new WelcomeP();
+    TypeP tP = new TypeP();
+    ToppingP toP = new ToppingP();
+    SizeP sP = new SizeP();
+    OrderP oP = new OrderP();
 
+    public OrderMenuGUI() {
+        setTitle("Order Menu");
+        setSize(500, 200);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+        Container c = getContentPane();
+        c.setLayout(new BorderLayout());
+
+        c.add(wP, BorderLayout.NORTH);
+        c.add(tP, BorderLayout.EAST);
+        c.add(toP, BorderLayout.CENTER);
+        c.add(sP, BorderLayout.WEST);
+        c.add(oP, BorderLayout.SOUTH);
+
+        setVisible(true);
+    }
 }
 class WelcomeP extends JPanel {
 
     private JLabel message;
     public WelcomeP() {
         message = new JLabel("Welcome to Pizzastore");
+        add(message);
     }
 //    add(message);
 }
