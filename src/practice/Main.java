@@ -4,5 +4,6 @@ public class Main {
 
     public static void main(String[] args) {
 	    OrderMenuGUI orderMenuGUI = new OrderMenuGUI();
+	    CoffeeOrderGUI coffeeOrderGUI = new CoffeeOrderGUI();
     }
 }
