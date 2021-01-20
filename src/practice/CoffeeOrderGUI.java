@@ -2,6 +2,8 @@ package practice;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class CoffeeOrderGUI extends JFrame {
     NameP N = new NameP();
@@ -32,18 +34,71 @@ public class CoffeeOrderGUI extends JFrame {
             add(message);
         }
     }
-    class CoffeeButtons extends JPanel {
-        private JButton black, sugar, dabang, reset;
+    class CoffeeButtons extends JPanel implements ActionListener {
+        private JButton black, suGar, dabang, reset;
         public CoffeeButtons() {
             black = new JButton("Black Coffee");
-            sugar = new JButton("Sugar Coffee");
+            black.addActionListener(this);
+            suGar = new JButton("Sugar Coffee");
+            suGar.addActionListener(this);
             dabang = new JButton("Dabang Coffee");
+            dabang.addActionListener(this);
             reset = new JButton("Reset");
+            reset.addActionListener(this);
 
             add(black);
-            add(sugar);
+            add(suGar);
             add(dabang);
             add(reset);
+        }
+        public void actionPerformed(ActionEvent e) {
+            Object s = e.getSource();
+            if (s.equals(black)) {
+                if (cup > 0 && coffee > 0 && water > 0) {
+                    cup--;
+                    coffee--;
+                    water--;
+                    repaint();
+
+                    JOptionPane.showMessageDialog(null,"블랙커피 나왔습니다.", "커피나왔습니다", JOptionPane.INFORMATION_MESSAGE);
+                } else {
+                    JOptionPane.showMessageDialog(null,"부족한 것이 있습니다. 충전이 필요합니다.", "재료부족 경고", JOptionPane.WARNING_MESSAGE);
+                }
+            } else if (s.equals(suGar)) {
+                if (cup > 0 && coffee > 0 && water > 0 && sugar > 0) {
+                    cup--;
+                    coffee--;
+                    sugar--;
+                    water--;
+                    repaint();
+
+                    JOptionPane.showMessageDialog(null, "설탕커피 나왔습니다.", "커피나왔습니다.", JOptionPane.INFORMATION_MESSAGE);
+                } else {
+                    JOptionPane.showMessageDialog(null,"부족한 것이 있습니다. 충전이 필요합니다.", "재료부족 경고", JOptionPane.WARNING_MESSAGE);
+                }
+            } else if (s.equals(dabang)) {
+                if (cup > 0 && coffee > 0 && water > 0 && sugar > 0 && cream > 0) {
+                    cup--;
+                    coffee--;
+                    sugar--;
+                    water--;
+                    cream--;
+                    repaint();
+
+                    JOptionPane.showMessageDialog(null, "다방커피 나왔습니다.", "커피나왔습니다.", JOptionPane.INFORMATION_MESSAGE);
+                } else {
+                    JOptionPane.showMessageDialog(null,"부족한 것이 있습니다. 충전이 필요합니다.", "재료부족 경고", JOptionPane.WARNING_MESSAGE);
+                }
+            } else if (s.equals(reset)) {
+                cup = 10;
+                coffee = 10;
+                water = 10;
+                sugar = 10;
+                cream = 10;
+                repaint();
+
+                JOptionPane.showMessageDialog(null,"재료가 모두 충전되었습니다.", "충전완료", JOptionPane.PLAIN_MESSAGE);
+            }
         }
     }
     class MainSimulater extends JPanel {
