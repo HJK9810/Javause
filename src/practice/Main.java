@@ -3,7 +3,7 @@ package practice;
 public class Main {
 
     public static void main(String[] args) {
-	    OrderMenuGUI orderMenuGUI = new OrderMenuGUI();
+//	    OrderMenuGUI orderMenuGUI = new OrderMenuGUI();
 	    CoffeeOrderGUI coffeeOrderGUI = new CoffeeOrderGUI();
     }
 }
