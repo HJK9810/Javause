@@ -9,7 +9,7 @@ public class CoffeeOrderGUI extends JFrame {
     NameP N = new NameP();
     CoffeeButtons CB = new CoffeeButtons();
     MainSimulater MS = new MainSimulater();
-    int cup = 10, coffee = 10, water = 10, sugar = 10, cream = 10;
+    private int cup = 10, coffee = 10, water = 10, sugar = 10, cream = 10;
 
     public CoffeeOrderGUI() {
         setTitle("Coffee Order");
@@ -105,11 +105,11 @@ public class CoffeeOrderGUI extends JFrame {
         public void paintComponent(Graphics g) {
             super.paintComponent(g);
             g.setColor(Color.lightGray);
-            g.fillRect(90, (140-(12*cup)), 40, (12*cup));
-            g.fillRect(160, (140-(12*coffee)), 40, (12*coffee));
-            g.fillRect(230, (140-(12*water)), 40, (12*water));
-            g.fillRect(300, (140-(12*sugar)), 40, (12*sugar));
-            g.fillRect(370, (140-(12*cream)), 40, (12*cream));
+            g.fillRect(90, 140-(12*cup), 40, (12*cup));
+            g.fillRect(160, 140-(12*coffee), 40, (12*coffee));
+            g.fillRect(230, 140-(12*water), 40, (12*water));
+            g.fillRect(300, 140-(12*sugar), 40, (12*sugar));
+            g.fillRect(370, 140-(12*cream), 40, (12*cream));
             g.setColor(Color.black);
             g.drawRect(90, 20, 40, 120);
             g.drawRect(160, 20, 40, 120);
