@@ -6,6 +6,8 @@ public class Main {
 //	    OrderMenuGUI orderMenuGUI = new OrderMenuGUI();
 //	    CoffeeOrderGUI coffeeOrderGUI = new CoffeeOrderGUI();
 //	    AudioplayGUI audioplayGUI = new AudioplayGUI();
-        ClickCalculGUI clickCalculGUI = new ClickCalculGUI();
+//        ClickCalculGUI clickCalculGUI = new ClickCalculGUI();
+        CalculGUI calculGUI = new CalculGUI();
     }
+
 }
